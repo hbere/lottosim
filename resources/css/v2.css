@@ -97,12 +97,12 @@ h3 {
 }
 
 .allPlays {
-  height: 500px;
+  height: 335px;
 }
 
 .rules {
   background-color: #b5b5b5;
-  height: 500px;
+  height: 335px;
 }
 
 @media only screen and (max-width: 620px) {
@@ -183,11 +183,14 @@ button:hover {
   display: none;
 }
 
-table {
-    border-collapse: collapse;
-    font-size: 13px;
+.tableGen {
+  border-collapse: collapse;
+  font-size: 13px;
+  border: 1px solid gray;
 }
 
-table, th, td {
-    border: 1px transparent black;
+.tableTransparent {
+  border-collapse: collapse;
+  font-size: 13px;
+  border: 0px transparent gray;
 }

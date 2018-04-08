@@ -21,27 +21,29 @@
       </p>
       <p><strong class="gameName">6 Balls</strong><em class="gameDesc"> is a basic lottery. 6 balls are drawn. The more you match, the more you win!</em></p>
       <hr />
-      <table class="rulesTable" id="rulesTable">
-        <tr>
-          <td>Ticket price</td>
-          <td>$<input class="rulesInput" type="number" id="cost" name="cost" min="0" max="20" value="2"></td>
-        </tr>
-        <tr>
-          <td>Regular balls range from 1 to </td>
-          <td><input class="rulesInput" type="number" id="ballsMax" name="maxBall" min="6" max="100" value="49"></td>
-        </tr>
-        <tr>
-          <td><div class="specialBall">Special balls range from 1 to </div></td>
-          <td><input class="rulesInput specialBall" type="number" id="specialBallsMax" name="maxBall" min="6" max="100" value="26"></td>
-        </tr>
-      </table>
+      <p>
+        <table class="tableTransparent" id="rulesTable">
+          <tr>
+            <td>Ticket price</td>
+            <td>$<input class="rulesInput" type="number" id="cost" name="cost" min="0" max="20" value="2"></td>
+          </tr>
+          <tr>
+            <td>Regular balls range from 1 to </td>
+            <td><input class="rulesInput" type="number" id="ballsMax" name="maxBall" min="6" max="100" value="49"></td>
+          </tr>
+          <tr>
+            <td><div class="specialBall">Special balls range from 1 to </div></td>
+            <td><input class="rulesInput specialBall" type="number" id="specialBallsMax" name="maxBall" min="6" max="100" value="26"></td>
+          </tr>
+        </table>
+      </p>
     </div>
 		<div class="previousPlay column2">
       <h2>Buy Tickets</h2>
       <p class="playButtons">
         <!-- <fieldset> -->
           <!-- <legend>Tickets</legend> -->
-          <button id="play1" name="play1" type="submit">1</button>
+          <button id="play1" name="play1" type="submit">1 Ticket</button>
           <button id="play10" name="play10" type="submit">10</button>
     			<button id="play100" name="play100" type="submit">100</button>
     			<button id="play1000" name="play1000" type="submit">1,000</button>
@@ -68,8 +70,8 @@
 		<div class="rules column2">
       <h2 id="overall">Overall Totals</h2>
       <p class="start">Click a button to play.</p>
-      <p class="play">You spent <strong id="amtSpent"></strong> to buy <strong id="plays"></strong> ticket(s).</p>
-      <p>You won back <strong id="amtWon"></strong>.</p>
+      <p class="play">You spent <strong id="amtSpent"></strong> to buy <em id="plays"></em> ticket(s).</p>
+      <p class="play">You won back <strong id="amtWon"></strong>.</p>
       <h3 class="play"><strong id="netWon"></strong></h3>
       <p class="playButtons"><button id="startOver" name="startOver" type="submit">Start Over</button></p>
     </div>

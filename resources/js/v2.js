@@ -81,16 +81,16 @@ function makeTable(headerArray, dataArray) { // return a table where:
   // B.  dataArra == array of arrays
   let newTable = "";
   // create header row
-  newTable += "<table><tr class='n'>";
+  newTable += "<table class='tableGen'><tr class='n tableGen'>";
   headerArray.forEach(function(element) {
-    newTable += "<th class='m' >" + element + "</th>";
+    newTable += "<th class='m tableGen' >" + element + "</th>";
   });
   newTable += "</tr>";
   // create data rows
   dataArray[0].forEach(function(element, i) {  // run once for each of N rows
-    newTable += "<tr class='n'>";
+    newTable += "<tr class='n tableGen'>";
     headerArray.forEach(function(element, j) {
-      newTable += "<td class='m' >" + dataArray[j][i] + "</td>";
+      newTable += "<td class='m tableGen' >" + dataArray[j][i] + "</td>";
     });
     newTable += "</tr>";
   });
@@ -276,7 +276,7 @@ const wallet = {
     }
     if (this.lastNnetWon > 0) {
       $("#lastNnetWon").text(
-        "You won $" + numberWithCommas(Math.abs(this.lastNnetWon))
+        "You won $" + numberWithCommas(Math.abs(this.lastNnetWon) + ".")
       );
       $("#lastNnetWon").css("color", "green");
     } else if (this.lastNnetWon == 0) {
@@ -284,7 +284,7 @@ const wallet = {
       $("#lastNnetWon").css("color", "green");
     } else if (this.lastNnetWon < 0) {
       $("#lastNnetWon").text(
-        "You lost $" + numberWithCommas(Math.abs(this.lastNnetWon))
+        "You lost $" + numberWithCommas(Math.abs(this.lastNnetWon) + ".")
       );
       $("#lastNnetWon").css("color", "darkred");
     }
@@ -293,13 +293,13 @@ const wallet = {
     $("#amtWon").text("$" + numberWithCommas(this.amtWon));
     $("#amtSpent").text("$" + numberWithCommas(this.amtSpent));
     if (this.netWon > 0) {
-      $("#netWon").text("You won $" + numberWithCommas(Math.abs(this.netWon)));
+      $("#netWon").text("You won $" + numberWithCommas(Math.abs(this.netWon) + "."));
       $("#netWon").css("color", "green");
     } else if (this.netWon === 0) {
       $("#netWon").text("You broke even.");
       $("#netWon").css("color", "green");
     } else if (this.netWon < 0) {
-      $("#netWon").text("You lost $" + numberWithCommas(Math.abs(this.netWon)));
+      $("#netWon").text("You lost $" + numberWithCommas(Math.abs(this.netWon) + "."));
       $("#netWon").css("color", "darkred");
     }
     lottery.printPrizeTables();
