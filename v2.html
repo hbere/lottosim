@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8">
+  	<title>Lottery Simulator</title>
+	  <link href="https://fonts.googleapis.com/css?family=Roboto|Playfair+Display" rel="stylesheet">
+  	<link rel="stylesheet" type="text/css" href="./resources/css/v2.css">
+  	<link rel="shortcut icon" type='image/x-icon' href="./resources/images/lottosim.ico">
+  	</script>
+  </head>
+  <body>
+  	<div id="header">
+  		<h1>Lottery Simulator</h1>
+  	</div>
+		<div class="playButtons column1" id="playButtons">
+      <h2>Play <em id="gameName">6 Balls</em></h2>
+      <fieldset>
+        <legend>Choose Game</legend>
+        <button id="lotto1" name="lotto1" type="submit">6 Balls</button>
+        <button id="lotto2" name="lotto2" type="submit">Superball</button>
+        <button id="lotto3" name="lotto3" type="submit">Vega Starball</button>
+      </fieldset>
+      <p><button id="play1" name="play1" type="submit">Spend $2 for 1 ticket</button></p>
+			<p><button id="play10" name="play10" type="submit">Spend $20 for 10 tickets</button></p>
+			<p><button id="play100" name="play100" type="submit">Spend $200 for 100 tickets</button></p>
+			<p><button id="play1000" name="play1000" type="submit">Spend $2,000 for 1,000 tickets</button></p>
+			<!-- <p><button id="play1000000" name="play1000000" type="submit">Spend $2,000,000 for 1,000,000 tickets</button></p> -->
+			<p><button id="startOver" name="startOver" type="submit">Start Over</button></p>
+    </div>
+		<div class="previousPlay column2">
+      <h2>Your Previous Play</h2>
+      <p class="start">Click a button to play.</p>
+      <p class="play">You bought <strong id="lastNgames"></strong> ticket(s).</p>
+      <p class="play">Winning numbers: <strong id="winningNumbers" class="circle"></strong>
+        <strong id="winningSpecial" class="circle circleSpecial"></strong></p>
+      <p class="play play1">Your numbers: <strong id="yourNumbers" class="circle"></strong>
+        <strong id="yourSpecial" class="circle circleSpecial"></strong></p>
+      <p class="play play1">Matched numbers: <strong id="yourNumbersMatches" class="circle"></strong>
+        <strong id="yourSpecialMatches" class="circle circleSpecial"></strong></p>
+      <p class="play play1">You matched <strong id="matchesN"></strong> number(s)<strong id="matchesSpecial"></strong>.</p>
+      <h3 class="play"><strong id="lastNnetWon"></strong></h3>
+    </div>
+		<div class="allPlays column1">
+      <h2 id="totals">Totals</h2>
+      <p class="start">Click a button to play.</p>
+      <p class="play">Total tickets: <strong id="plays"></strong></p>
+      <p class="play">Matched</p>
+      <p class="play matchesTable"></p>
+      <p class="play">Total won: <strong id="amtWon"></strong></p>
+      <p class="play">Total spent: <strong id="amtSpent"></strong></p>
+      <h3 class="play"><strong id="netWon"></strong></h3>
+    </div>
+		<div class="rules column2">
+      <h2 id="rules">Rules</h2>
+      <p>Cost per game: <strong>$2</strong></p>
+      <p>Prizes:</p>
+      <p class="prizesTable"></p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="./resources/js/v2.js"></script>
+  </body>
+</html>

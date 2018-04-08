@@ -1,0 +1,193 @@
+/* © 2018 lottosim.website */
+/* CSS */
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 50px;
+  display: inline-block;
+}
+
+.circle {
+  /* width: 500px;
+  height: 500px; */
+  /* border-radius: 80%; */
+  /* font-size: 50px; */
+  color: #000;
+  /* line-height: 500px; */
+  text-align: center;
+  background: #fff;
+}
+
+.circleSpecial {
+  color: #fff;
+  background: red;
+}
+
+body {
+  /* width: 50%; */
+  margin: 0 auto;
+  /* margin-right: 0px; */
+  width: 680px;
+  background-color: white;
+  /* background-image: linear-gradient(to bottom, rgba(0,0,255,0.5), rgba(0,0,0,0.5)); */
+  background: linear-gradient(
+    to bottom right,
+    #fcfffc,
+    #eaffee
+  ); // #eaffee  #f4fcf6
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  margin: 10px;
+  margin-bottom: 0px;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 25px;
+}
+
+h3 {
+  margin-bottom: 18px;
+}
+
+.content {
+  width: 100%;
+  background-color: #e5e5e5;
+  float: left;
+  padding: 0 20px;
+  margin: 1%;
+}
+
+.vividHeader {
+  color: #111111;
+}
+
+.playButtons {
+  text-align: center;
+}
+
+.column1 {
+  background-color: #e5e5e5;
+  width: 45%;
+  height: 380px;
+  float: left;
+  padding: 0 20px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-right: 2%;
+}
+
+.column2 {
+  background-color: #e5e5e5;
+  width: 53%;
+  height: 380px;
+  float: left;
+  padding: 0 20px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.allPlays {
+  height: 500px;
+}
+
+.rules {
+  background-color: #b5b5b5;
+  height: 500px;
+}
+
+@media only screen and (max-width: 620px) {
+  /* For mobile phones: */
+  body {
+    width: 90%;
+  }
+  .column1,
+  .column2,
+  .content {
+    width: 100%;
+    height: auto;
+  }
+}
+
+#footer,
+.footer {
+  font-size: 10px;
+  color: #000000;
+  text-align: center;
+  margin-top: 7px;
+  padding: 10px;
+  width: 100%;
+}
+
+.rulesInput {
+  background-color: #f4f4f4;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.prizeList {
+  width: 110px;
+}
+
+input:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* https://www.w3schools.com/csS/css3_buttons.asp */
+button {
+  /* font-size: 14px; */
+  border-radius: 8px;
+  padding: 6px 6px;
+  -webkit-transition-duration: 0.01s; /* Safari */
+  transition-duration: 0.01s;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+}
+
+#lotto1 {
+  background-color: #4caf50;
+}
+
+#lotto1:hover,
+#lotto2:hover,
+#lotto3:hover {
+  color: black;
+}
+
+button:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+#resetThis {
+  text-align: center;
+}
+
+.start {
+  display: block;
+}
+
+.play,
+.play1 {
+  display: none;
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
