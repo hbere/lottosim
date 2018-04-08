@@ -87,46 +87,45 @@ $("#startOver").click(function() {
   $(".play1").css("display", "none");
 });
 
+
 // FUNCTIONS
-function getRandomInt(min, max) {
+function getRandomInt(min, max) { // return a random integer between specified min and max
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
-function numberWithCommas(x) {
+function numberWithCommas(x) { // return a number but with commas to mark thousands
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-function matches(array1, array2) {
+function matches(array1, array2) { // return the number of matching elements in two arrays
   let matches = array1.filter(function(n) {
     return array2.indexOf(n) !== -1;
   });
   return matches;
 }
 
-function printArray(array) {
+function printArray(array) { // return array as an ordered, space-separated string
   let str = "";
-  array.sort((a, b) => a - b); // https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly#1063027
+  array.sort((a, b) => a - b); // see https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly#1063027
   array.forEach(function(element, j) {
     str += array[j] + " ";
   });
   return str;
 }
 
-function makeTable(headerArray, dataArray) {
-  // header array = 1 row N columns
+function makeTable(headerArray, dataArray) { // make a table where
+  // header array == 1 row N columns
   // dataArra == array of arrays
-  // Table
   let newTable = "";
-  newTable += "<table>";
-  // Headers -- check out forEach function & other stuff
-  newTable += "<tr class='n'>";
+  // create header row
+  newTable += "<table><tr class='n'>";
   headerArray.forEach(function(element) {
     newTable += "<td class='m' >" + element + "</td>";
   });
   newTable += "</tr>";
-  // Data
+  // create data rows
   dataArray[0].forEach(function(element, i) {  // run once for each of N rows
     newTable += "<tr class='n'>";
     headerArray.forEach(function(element, j) {
@@ -134,7 +133,7 @@ function makeTable(headerArray, dataArray) {
     });
     newTable += "</tr>";
   });
-  // Table
+  // return html table
   newTable += "</table>";
   return newTable;
 }
@@ -167,7 +166,7 @@ function lotto(
   this.prizesMatches = [0, 0, 0, 0, 0, 0, 0];
   this.prizesSpecialMatches = [0, 0, 0, 0, 0, 0, 0];
   // METHODS
-  this.initializePrizes = function(id) {
+  this.initializePrizes = function(id) { // populate prize array appropriately for lotto type
     if (id === 1) {
       // 6 Balls
       this.prizes = [0, 0, 0, 6, 60, 3000, 6000000];
@@ -192,7 +191,7 @@ function lotto(
     }
     return null;
   };
-  this.random = function() {
+  this.random = function() { // returns an array of random numbers; array length = # balls
     let temp, match;
     let array = [];
     for (i = 0; i < this.balls; i++) {
@@ -213,10 +212,10 @@ function lotto(
     array.sort((a, b) => a - b);
     return array;
   };
-  this.randomSpecial = function() {
+  this.randomSpecial = function() { // returns one random number between 1 and special ball maximum
     return getRandomInt(1, this.specialBallsMax);
   };
-  this.printPrizeTables = function() {
+  this.printPrizeTables = function() { // prints updated tables to html page
     // Construct lottery
     let prizeHeaderArray, matchHeaderArray;
     let dataBalls = [],
@@ -278,7 +277,7 @@ function lotto(
 }
 
 const wallet = {
-  // what I started with
+  // STARTING MONEY
   money: 200,
   // LAST PURCHASED TICKET
   yourNumbers: [],
@@ -293,8 +292,8 @@ const wallet = {
   amtSpent: 0,
   amtWon: 0,
   netWon: 0,
-  // choose Numbers
-  buyTicket: function(plays) {
+  // choose numbers
+  buyTicket: function(plays) { // play/buy a ticket for currently selected lottery game
     this.lastNgames = plays;
     this.lastNnetWon = 0;
     lottery.draw();
@@ -332,7 +331,7 @@ const wallet = {
     this.netWon += this.lastNnetWon;
     return null;
   },
-  printTotals: function() {
+  printTotals: function() { // print wallet totals to html page
     // PREVIOUS PLAY
     $("#lastNgames").text(numberWithCommas(this.lastNgames));
     $("#yourNumbers").text(printArray(this.yourNumbers));
