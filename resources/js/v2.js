@@ -60,6 +60,20 @@ function numberWithCommas(x) { // return a number but with commas to mark thousa
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
+function arrayWithCommas(x, dollarSign = false) { // return an array but with commas to mark thousands
+  let tempArray = [];
+  if (dollarSign === true) {
+    x.forEach(function(element, j) {
+      tempArray[j] = "$" + numberWithCommas(element);
+    });
+  } else {
+    x.forEach(function(element, j) {
+      tempArray[j] = numberWithCommas(element);
+    });
+  }
+  return tempArray;
+}
+
 function matches(array1, array2) { // return the number of matching elements in two arrays
   let matches = array1.filter(function(n) {
     return array2.indexOf(n) !== -1;
@@ -186,12 +200,12 @@ function lotto(
     $(".prizesTable").empty();
     $(".matchesTable").empty();
     // prizeHeaderArray = ["Matching\nNumbers", "Prize"];
-    matchHeaderArray = ["Matching Numbers", "Prize ($)", "Your Tickets (#)"];
+    matchHeaderArray = ["Matching Numbers", "Prize", "Your Tickets"];
     // $(".prizesTable").append(
     //   makeTable(prizeHeaderArray, [dataBalls, dataPrizes])
     // );
     $(".matchesTable").append(
-      makeTable(matchHeaderArray, [dataBalls, dataPrizes, matchArray])
+      makeTable(matchHeaderArray, [dataBalls, arrayWithCommas(dataPrizes, true), arrayWithCommas(matchArray, false)])
     );
   }
 }
