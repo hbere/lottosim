@@ -13,47 +13,68 @@
   		<h1>Lottery Simulator</h1>
   	</div>
 		<div class="playButtons column1" id="playButtons">
-      <h2>Play <em id="gameName">6 Balls</em></h2>
-      <fieldset>
-        <legend>Choose Game</legend>
-        <button id="lotto1" name="lotto1" type="submit">6 Balls</button>
-        <button id="lotto2" name="lotto2" type="submit">Superball</button>
-        <button id="lotto3" name="lotto3" type="submit">Vega Starball</button>
-      </fieldset>
-      <p><button id="play1" name="play1" type="submit">Spend $2 for 1 ticket</button></p>
-			<p><button id="play10" name="play10" type="submit">Spend $20 for 10 tickets</button></p>
-			<p><button id="play100" name="play100" type="submit">Spend $200 for 100 tickets</button></p>
-			<p><button id="play1000" name="play1000" type="submit">Spend $2,000 for 1,000 tickets</button></p>
-			<!-- <p><button id="play1000000" name="play1000000" type="submit">Spend $2,000,000 for 1,000,000 tickets</button></p> -->
+      <h2>Choose Game</h2>
+      <p>
+        <fieldset>
+          <legend>Choose Game</legend>
+          <button id="lotto1" name="lotto1" type="submit">6 Balls</button>
+          <button id="lotto2" name="lotto2" type="submit">Superball</button>
+          <button id="lotto3" name="lotto3" type="submit">Vega Starball</button>
+        </fieldset>
+      </p>
+      <p>
+        <fieldset>
+          <legend>Buy tickets</legend>
+          <button id="play1" name="play1" type="submit">1 ticket</button>
+          <button id="play10" name="play10" type="submit">10 tickets</button>
+    			<button id="play100" name="play100" type="submit">100 tickets</button>
+    			<button id="play1000" name="play1000" type="submit">1,000 tickets</button>
+    			<button id="play1000000" name="play1000000" type="submit">1,000,000 tickets</button>
+        </fieldset>
+      </p>
 			<p><button id="startOver" name="startOver" type="submit">Start Over</button></p>
     </div>
 		<div class="previousPlay column2">
+      <h2>Play <em class="gameName">6 Balls</em></h2>
       <h2>Your Previous Play</h2>
       <p class="start">Click a button to play.</p>
       <p class="play">You bought <strong id="lastNgames"></strong> ticket(s).</p>
       <p class="play">Winning numbers: <strong id="winningNumbers" class="circle"></strong>
-        <strong id="winningSpecial" class="circle circleSpecial"></strong></p>
+        <strong id="winningSpecial" class="circle circleSpecial specialBall"></strong></p>
       <p class="play play1">Your numbers: <strong id="yourNumbers" class="circle"></strong>
-        <strong id="yourSpecial" class="circle circleSpecial"></strong></p>
+        <strong id="yourSpecial" class="circle circleSpecial specialBall"></strong></p>
       <p class="play play1">Matched numbers: <strong id="yourNumbersMatches" class="circle"></strong>
-        <strong id="yourSpecialMatches" class="circle circleSpecial"></strong></p>
-      <p class="play play1">You matched <strong id="matchesN"></strong> number(s)<strong id="matchesSpecial"></strong>.</p>
+        <strong id="yourSpecialMatches" class="circle circleSpecial specialBall"></strong></p>
+      <p class="play play1">You matched <strong id="matchesN"></strong> number(s)
+        <strong id="matchesSpecial" class="circleSpecial"></strong>.</p>
       <h3 class="play"><strong id="lastNnetWon"></strong></h3>
     </div>
 		<div class="allPlays column1">
-      <h2 id="totals">Totals</h2>
+      <h2 id="totals"><em class="gameName">6 Balls</em> Results</h2>
       <p class="start">Click a button to play.</p>
-      <p class="play">Total tickets: <strong id="plays"></strong></p>
-      <p class="play">Matched</p>
       <p class="play matchesTable"></p>
-      <p class="play">Total won: <strong id="amtWon"></strong></p>
-      <p class="play">Total spent: <strong id="amtSpent"></strong></p>
+      <h2 id="overall">Overall Results</h2>
+      <p class="start">Click a button to play.</p>
       <h3 class="play"><strong id="netWon"></strong></h3>
+      <p class="play">You bought <strong id="plays"></strong> ticket(s), spending
+        <strong id="amtSpent"></strong>. You won back <strong id="amtWon"></strong>.</p>
     </div>
 		<div class="rules column2">
-      <h2 id="rules">Rules</h2>
-      <p>Cost per game: <strong>$2</strong></p>
-      <p>Prizes:</p>
+      <h2 id="rules">Rules and Prizes</h2>
+      <table class="rulesTable" id="rulesTable">
+        <tr>
+          <td>Regular balls range from 1 to </td>
+          <td><input class="rulesInput" type="number" id="ballsMax" name="maxBall" min="6" max="100" value="49"></td>
+        </tr>
+        <tr>
+          <td><div class="specialBall">Special balls range from 1 to </div></td>
+          <td><input class="rulesInput specialBall" type="number" id="specialBallsMax" name="maxBall" min="6" max="100" value="26"></td>
+        </tr>
+        <tr>
+          <td>Ticket price</td>
+          <td>$<input class="rulesInput" type="number" id="cost" name="cost" min="0" max="20" value="2"></td>
+        </tr>
+      </table>
       <p class="prizesTable"></p>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
