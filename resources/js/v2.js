@@ -2,15 +2,18 @@
 // VARIABLE DECLARATIONS
 let lotto1PrizeArray = [0, 0, 0, 6, 60, 3000, 6000000];
 let lotto1PrizeSpecialArray = [0, 0, 0, 0, 0, 0, 0];
-const lotto1 = new lotto(1, "6 Balls", 6, 49, false, 0, 2, 3, lotto1PrizeArray, lotto1PrizeSpecialArray);
+let lotto1Desc = " is a basic lottery. 6 balls are drawn. The more you match, the more you win!";
+const lotto1 = new lotto(1, "6 Balls", 6, 49, false, 0, 2, 3, lotto1PrizeArray, lotto1PrizeSpecialArray, lotto1Desc);
 
 let lotto2PrizeArray = [0, 0, 0, 10, 500, 1000000];
 let lotto2PrizeSpecialArray = [2, 4, 10, 200, 10000, 500000000];
-const lotto2 = new lotto(2, "Superball", 5, 69, true, 26, 2, 1, lotto2PrizeArray, lotto2PrizeSpecialArray);
+let lotto2Desc = " is a special ball lottery. Match all 5 regular balls and 1 special ball to win the jackpot!";
+const lotto2 = new lotto(2, "Superball", 5, 69, true, 26, 2, 1, lotto2PrizeArray, lotto2PrizeSpecialArray, lotto2Desc);
 
 let lotto3PrizeArray = [0, 0, 0, 7, 100, 1000000];
 let lotto3PrizeSpecialArray = [4, 4, 7, 100, 50000, 500000000];
-const lotto3 = new lotto(3, "Vega Starball", 5, 70, true, 25, 2, 1, lotto3PrizeArray, lotto3PrizeSpecialArray);
+let lotto3Desc = " is a special ball lottery. Match all 5 regular balls and 1 special ball to win the jackpot!";
+const lotto3 = new lotto(3, "Vega Starball", 5, 70, true, 25, 2, 1, lotto3PrizeArray, lotto3PrizeSpecialArray, lotto3Desc);
 
 let lottery = lotto1;
 $(".specialBall").css("display", "none");
@@ -108,11 +111,13 @@ function lotto(
   cost = 2,
   plays = 1,
   prizeArray,
-  prizeSpecialArray
+  prizeSpecialArray,
+  desc
 ) {
   // RULES
   this.id = id;
   this.name = name; // lottery name
+  this.desc = desc; // Lottery description
   this.balls = balls; // number of regular balls drawn
   this.ballsMax = ballsMax; // maximum of ball numbers
   this.specialBall = specialBall; // special ball yes or no
@@ -180,36 +185,14 @@ function lotto(
     // Print prize & match tables
     $(".prizesTable").empty();
     $(".matchesTable").empty();
-    if (this.id === 1) {
-      prizeHeaderArray = ["Matching Numbers", "Prize"];
-      matchHeaderArray = ["Matching Numbers", "N"];
-      $(".prizesTable").append(
-        makeTable(prizeHeaderArray, [dataBalls, dataPrizes])
-      );
-      $(".matchesTable").append(
-        makeTable(matchHeaderArray, [dataBalls, matchArray])
-      );
-    } else if (this.id === 2) {
-      prizeHeaderArray = ["Matching Numbers", "Prize"];
-      matchHeaderArray = ["Matching Numbers", "N"];
-      $(".prizesTable").append(
-        makeTable(prizeHeaderArray, [dataBalls, dataPrizes])
-      );
-      $(".matchesTable").append(
-        makeTable(matchHeaderArray, [dataBalls, matchArray])
-      );
-    } else if (this.id === 3) {
-      prizeHeaderArray = ["Matching Numbers", "Prize"];
-      matchHeaderArray = ["Matching Numbers", "N"];
-      $(".prizesTable").append(
-        makeTable(prizeHeaderArray, [dataBalls, dataPrizes])
-      );
-      $(".matchesTable").append(
-        makeTable(matchHeaderArray, [dataBalls, matchArray])
-      );
-    } else {
-      alert("Error");
-    }
+    // prizeHeaderArray = ["Matching\nNumbers", "Prize"];
+    matchHeaderArray = ["Matching Numbers", "Prize ($)", "Your Tickets (#)"];
+    // $(".prizesTable").append(
+    //   makeTable(prizeHeaderArray, [dataBalls, dataPrizes])
+    // );
+    $(".matchesTable").append(
+      makeTable(matchHeaderArray, [dataBalls, dataPrizes, matchArray])
+    );
   }
 }
 
@@ -354,30 +337,42 @@ $("#lotto1").click(function() {
   lottery = lotto1;
   lottery.printPrizeTables();
   $(".gameName").text(lottery.name);
+  $(".gameDesc").text(lottery.desc);
   $(".specialBall").css("display", "none");
   $("#lotto1").css("background-color", "#4CAF50");
   $("#lotto2").css("background-color", "white");
   $("#lotto3").css("background-color", "white");
+  $("#cost").val(lottery.cost);
+  $("#ballsMax").val(lottery.ballsMax);
+  $("#specialBallsMax").val(lottery.specialBallsMax);
 });
 
 $("#lotto2").click(function() {
   lottery = lotto2;
   lottery.printPrizeTables();
   $(".gameName").text(lottery.name);
+  $(".gameDesc").text(lottery.desc);
   $(".specialBall").css("display", "inline");
   $("#lotto1").css("background-color", "white");
   $("#lotto2").css("background-color", "#4CAF50");
   $("#lotto3").css("background-color", "white");
+  $("#cost").val(lottery.cost);
+  $("#ballsMax").val(lottery.ballsMax);
+  $("#specialBallsMax").val(lottery.specialBallsMax);
 });
 
 $("#lotto3").click(function() {
   lottery = lotto3;
   lottery.printPrizeTables();
   $(".gameName").text(lottery.name);
+  $(".gameDesc").text(lottery.desc);
   $(".specialBall").css("display", "inline");
   $("#lotto1").css("background-color", "white");
   $("#lotto2").css("background-color", "white");
   $("#lotto3").css("background-color", "#4CAF50");
+  $("#cost").val(lottery.cost);
+  $("#ballsMax").val(lottery.ballsMax);
+  $("#specialBallsMax").val(lottery.specialBallsMax);
 });
 
 $("#play1").click(function() {
