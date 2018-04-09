@@ -47,7 +47,7 @@ let lotto3Desc =
   " is a special ball lottery. Match all 5 regular balls and 1 special ball to win the jackpot!";
 const lotto3 = new lotto(
   3,
-  "Vega Starball",
+  "Ultra Millions",
   5,
   70,
   true,
