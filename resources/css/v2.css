@@ -245,4 +245,5 @@ button:hover {
   border-collapse: collapse;
   font-size: 14px;
   border: 0px transparent gray;
+  text-align: left;
 }

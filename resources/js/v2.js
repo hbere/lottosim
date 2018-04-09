@@ -18,6 +18,11 @@ const lotto3 = new lotto(3, "Vega Starball", 5, 70, true, 25, 2, 1, lotto3PrizeA
 let lottery = lotto1;
 $(".specialBall").css("display", "none");
 
+$( document ).ready(function() {
+  wallet.printTotals();
+});
+
+
 
 // FUNCTIONS
 function getRandomInt(min, max) { // return 1 random integer between min and max
@@ -338,6 +343,9 @@ const wallet = {
     this.amtWon = 0;
     this.netWon = 0;
     lottery.zeroOutMatchesArrays();
+    lotto1.zeroOutMatchesArrays();
+    lotto2.zeroOutMatchesArrays();
+    lotto3.zeroOutMatchesArrays();
     this.printTotals();
     return null;
   }
@@ -366,6 +374,7 @@ $("#lotto1").click(function() {
   $(".start").css("display", "block");
   $(".play").css("display", "none");
   $(".play1").css("display", "none");
+  $(".results").css("display", "block");
 });
 
 $("#lotto2").click(function() {
@@ -383,6 +392,7 @@ $("#lotto2").click(function() {
   $(".start").css("display", "block");
   $(".play").css("display", "none");
   $(".play1").css("display", "none");
+  $(".results").css("display", "block");
 });
 
 $("#lotto3").click(function() {
@@ -400,6 +410,8 @@ $("#lotto3").click(function() {
   $(".start").css("display", "block");
   $(".play").css("display", "none");
   $(".play1").css("display", "none");
+  $(".results").css("display", "block");
+
 });
 
 $("#play1").click(function() {
