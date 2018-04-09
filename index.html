@@ -13,110 +13,101 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116394405-1"></script>
 	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'UA-116394405-1');
-	</script>
+	window.dataLayer = window.dataLayer || [];
+function gtag() {
+  dataLayer.push(arguments);
+}
+gtag("js", new Date());
+gtag("config", "UA-116394405-1");
+</script>
 
 	<!-- Comodo Trust Logo -->
 	<script type="text/javascript"> //<![CDATA[
-	var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.comodo.com/" : "http://www.trustlogo.com/");
-	document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
-	//]]>
-	</script>
+	var tlJsHost =
+  window.location.protocol == "https:"
+    ? "https://secure.comodo.com/"
+    : "http://www.trustlogo.com/";
+document.write(
+  unescape(
+    "%3Cscript src='" +
+      tlJsHost +
+      "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"
+  )
+);
+//]]>
+</script>
 </head>
 <body>
 	<div id="header">
 		<h1>Lottery Simulator</h1>
 		<p class="footer">Disclaimer: This is not a real lottery. No actual spend, loss, or gain of real currency is involved.</p>
 	</div>
-	<div>
-		<div class="playButtons column1" id="playButtons">
-			<h2>Click to play</h2>
-			<p><button id="play1" name="play1" type="submit">Spend $2 for 1 ticket</button></p>
-			<p><button id="play10" name="play10" type="submit">Spend $20 for 10 tickets</button></p>
-			<p><button id="play100" name="play100" type="submit">Spend $200 for 100 tickets</button></p>
-			<p><button id="play1000" name="play1000" type="submit">Spend $2,000 for 1,000 tickets</button></p>
-			<p><button id="play1000000" name="play1000000" type="submit">Spend $2,000,000 for 1,000,000 tickets</button></p>
-			<p><button id="startOver" name="startOver" type="submit">Start Over</button></p>
-			<!-- your favorite animal's image goes here -->
-			<!-- <img class="img" src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Sirocco_full_length_portrait.jpg" alt="Kakapo"> -->
-		</div>
-		<div class="previousPlay column2">
-			<h2>Your Previous Play</h2>
-			<div id="thisPlay">
-				<p>Click a button to play.</p>
-			</div>
-		</div>
-		<div class="allPlays column1">
-			<h2>Your Totals</h2>
-			<div id="allPlays">
-				<p>Click a button to play.</p>
-			</div>
-		</div>
-		<div class="rules column2">
-			<h3 class="vividHeader">Change the rules</h3>
-			<!-- <h3>Choose your rules:</h3> -->
-			<form id="rulesPicker">
-				<table class="prizeTable" id="prizeTable">
-					<tr>
-						<td>Numbers range from 1 to </td>
-						<td><input class="rulesInput" type="number" id="maxBall" name="maxBall" min="6" max="100" value="49"></li></td>
-					</tr>
-					<tr>
-						<td>Ticket price</td>
-						<td>$<input class="rulesInput" type="number" id="costPerPlay" name="cost" min="0" max="20" value="2"></td>
-					</tr>
-					<tr>
-						<td>&nbsp</td>
-					</tr>
-				</table>
-				<table>
-					<tr>
-						<td>Prizes:</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>0 matches wins</td>
-						<td>$<input class="prizeList rulesInput" type="number" id="prize0" name="prize0" value="0"></li></td>
-					</tr>
-					<tr>
-						<td>1 match wins</td>
-						<td>$<input class="prizeList rulesInput" type="number" id="prize1" name="prize1" value="0"></li></td>
-					</tr>
-					<tr>
-						<td>2 matches wins</td>
-						<td>$<input class="prizeList rulesInput" type="number" id="prize2" name="prize2" value="0"></li></td>
-					</tr>
-					<tr>
-						<td>3 matches wins</td>
-						<td>$<input class="prizeList rulesInput" type="number" id="prize3" name="prize3" value="2" step="2"></li></td>
-					</tr>
-					<tr>
-						<td>4 matches wins</td>
-						<td>$<input class="prizeList rulesInput" type="number" id="prize4" name="prize4" value="20" step="20"></li></td>
-					</tr>
-					<tr>
-						<td>5 matches wins</td>
-						<td>$<input class="prizeList rulesInput" type="number" id="prize5" name="prize5" value="1000" step="1000"></li></td>
-					</tr>
-					<tr>
-						<td>6 matches wins</td>
-						<td>$<input class="prizeList rulesInput" type="number" id="prize6" name="prize6" value="2000000" step="1000000"></li></td>
-					</tr>
-				</table>
-				<!-- <li>Quick choices:</li>
-				<ul> -->
-					<!-- <li>Excellent Ball-similar rules: </li>
-					<li>Vega Star Millions-similar rules: </li> -->
-				<p text-align="center"><input id="resetThis" type="reset"> the rules to default</p>
-				<!-- </ul> -->
-			<!-- <p>Number of balls:
-				<input type="number" id="lottoBalls" name="balls" min="1" max="20" value="6">
-			</p> -->
-			</form>
-		</div>
+	<div class="playButtons column1" id="playButtons">
+		<h2>Choose a Game</h2>
+		<p>
+			<button id="lotto1" name="lotto1" type="submit">6 Balls</button>
+			<button id="lotto2" name="lotto2" type="submit">Superball</button>
+			<button id="lotto3" name="lotto3" type="submit">Vega Starball</button>
+		</p>
+		<p><strong class="gameName">6 Balls</strong><em class="gameDesc"> is a basic lottery. 6 balls are drawn. The more you match, the more you win!</em></p>
+		<hr />
+		<p>
+			<table class="tableTransparent" id="rulesTable">
+				<tr>
+					<td>Ticket price</td>
+					<td>$<input class="rulesInput" type="number" id="cost" name="cost" min="0" max="20" value="2"></td>
+				</tr>
+				<tr>
+					<td>Regular balls range from 1 to </td>
+					<td><input class="rulesInput" type="number" id="ballsMax" name="maxBall" min="6" max="100" value="49"></td>
+				</tr>
+				<tr>
+					<td><div class="specialBall">Special balls range from 1 to </div></td>
+					<td><input class="rulesInput specialBall" type="number" id="specialBallsMax" name="maxBall" min="6" max="100" value="26"></td>
+				</tr>
+			</table>
+		</p>
+	</div>
+	<div class="previousPlay column2">
+		<h2>Buy Tickets</h2>
+		<p class="playButtons">
+			<!-- <fieldset> -->
+				<!-- <legend>Tickets</legend> -->
+				<button id="play1" name="play1" type="submit">1 Ticket</button>
+				<button id="play10" name="play10" type="submit">10</button>
+				<button id="play100" name="play100" type="submit">100</button>
+				<button id="play1000" name="play1000" type="submit">1,000</button>
+				<button id="play1000000" name="play1000000" type="submit">1,000,000</button>
+			<!-- </fieldset> -->
+		</p>
+		<p class="start">Click a button to play.</p>
+		<p class="play">You bought <strong id="lastNgames"></strong> ticket(s).</p>
+		<table class="play circleTable">
+			<tr class="play circleRow">
+				<td class="circleTableTD circleTableTDcol1">Winning numbers:</td>
+				<td class="circleTableTD"><strong id="winningNumbers"></strong><strong id="winningSpecial" class="specialBall"></strong></td>
+			</tr>
+			<tr class="play play1 circleRow">
+				<td class="circleTableTD circleTableTDcol1">Your numbers:</td>
+				<td class="circleTableTD"><strong id="yourNumbers"></strong><strong id="yourSpecial" class="specialBall"></strong></td>
+			</tr>
+			<tr class="play play1 circleRow">
+				<td class="circleTableTD circleTableTDcol1">Match(es):</td>
+				<td class="circleTableTD"><strong id="yourNumbersMatches"></strong><strong id="yourSpecialMatches" class="specialBall"></strong></td>
+			</tr>
+		</table>
+		<h3 class="play"><strong id="lastNnetWon"></strong></h3>
+	</div>
+	<div class="allPlays column1">
+		<h2 id="totals"><em class="gameName">6 Balls</em> Totals</h2>
+		<p class="matchesTable"></p>
+	</div>
+	<div class="rules column2">
+		<h2 id="overall">Overall Totals</h2>
+		<p class="results">You spent <strong id="amtSpent"></strong> on <span id="plays"></span> ticket(s).</p>
+		<p class="results">You won back <strong id="amtWon"></strong>.</p>
+		<h3 class="results"><strong id="netWon"></strong></h3>
+		<p class="playButtons results"><button id="startOver" name="startOver" type="submit">Start Over</button></p>
 	</div>
 	<!-- <hr> -->
 	<footer id="footer" class="footer">
@@ -130,8 +121,12 @@
 	<script src="./resources/js/lottosim.js"></script>
 	<!-- Comodo Trust Logo -->
 	<script language="JavaScript" type="text/javascript">
-	TrustLogo("https://lottosim.website/resources/images/comodo_secure_seal_76x26_transp.png", "CL1", "none");
-	</script>
+	TrustLogo(
+  "https://lottosim.website/resources/images/comodo_secure_seal_76x26_transp.png",
+  "CL1",
+  "none"
+);
+</script>
 	<a  href="https://www.positivessl.com/" id="comodoTL">Positive SSL</a>
 </body>
 </html>

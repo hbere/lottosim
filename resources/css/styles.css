@@ -10,6 +10,74 @@ img {
   display: inline-block;
 }
 
+ul {
+  display: inline;
+  margin-left: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.circle {
+  display: inline-block;
+  margin: 0 1px 0 0;
+  background-color: #fff;
+  border: 1px solid #666666;
+  border-radius: 16px;
+  width: 25px;
+  height: 25px;
+  padding: 4px 0 0 0;
+  text-align: center;
+
+  /* color: #000; */
+  /* text-align: center; */
+  /* background: #fff; */
+
+  /* width: 500px; */
+  /* height: 500px; */
+  /* border-radius: 80%; */
+  /* font-size: 50px; */
+  /* line-height: 500px; */
+}
+
+.circleSpecial {
+  display: inline-block;
+  margin: 0 1px 0 0;
+  color: #fff;
+  background-color: red;
+  border: 1px solid #666666;
+  border-radius: 16px;
+  width: 25px;
+  height: 25px;
+  padding: 4px 0 0 0;
+  text-align: center;
+
+  /* color: #fff; */
+  /* background: red; */
+}
+
+.circleTable {
+  margin-left: 0;
+}
+
+.circleRow {
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  font-size: 14px;
+}
+
+.circleTableTD {
+  padding: 0;
+  margin: 0;
+  height: 30px;
+}
+
+.circleTableTDcol1 {
+  width: 105px;
+  /* font-weight: bold; */
+}
+
 body {
   /* width: 50%; */
   margin: 0 auto;
@@ -17,18 +85,22 @@ body {
   width: 680px;
   background-color: white;
   /* background-image: linear-gradient(to bottom, rgba(0,0,255,0.5), rgba(0,0,0,0.5)); */
-  background: linear-gradient(to bottom right, #fcfffc, #eaffee);  // #eaffee  #f4fcf6
-  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(
+    to bottom right,
+    #fcfffc,
+    #eaffee
+  ); // #eaffee  #f4fcf6
+  font-family: "Roboto", sans-serif;
 }
-
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
   text-align: center;
   margin: 10px;
   margin-bottom: 0px;
   padding: 0;
 }
-
 h1 {
   margin-top: 25px;
 }
@@ -39,12 +111,11 @@ h3 {
 
 .content {
   width: 100%;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   float: left;
   padding: 0 20px;
   margin: 1%;
 }
-
 .vividHeader {
   color: #111111;
 }
@@ -54,42 +125,46 @@ h3 {
 }
 
 .column1 {
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   width: 45%;
-  height: 380px;
+  height: 315px;
   float: left;
   padding: 0 20px;
   margin-top: 1%;
   margin-bottom: 1%;
   margin-right: 2%;
 }
-
 .column2 {
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   width: 53%;
-  height: 380px;
+  height: 315px;
   float: left;
   padding: 0 20px;
   margin-top: 1%;
   margin-bottom: 1%;
 }
-
-.rules {
-  background-color: #B5B5B5;
+.allPlays {
+  height: 335px;
 }
 
-@media only screen and (max-width:620px) {
+.rules {
+  background-color: #b5b5b5;
+  height: 335px;
+}
+@media only screen and (max-width: 620px) {
   /* For mobile phones: */
   body {
     width: 90%;
   }
-  .column1, .column2, .content {
-    width:100%;
-    height:auto;
+  .column1,
+  .column2,
+  .content {
+    width: 100%;
+    height: auto;
   }
 }
-
-#footer, .footer {
+#footer,
+.footer {
   font-size: 10px;
   color: #000000;
   text-align: center;
@@ -97,39 +172,65 @@ h3 {
   padding: 10px;
   width: 100%;
 }
-
 .rulesInput {
-  background-color: #F4F4F4;
-  cursor:pointer;
+  background-color: #f4f4f4;
+  cursor: pointer;
   font-weight: bold;
 }
-
 .prizeList {
   width: 110px;
 }
 
 input:hover {
-    background-color: #4CAF50;
-    color: white;
+  background-color: #4caf50;
+  color: white;
 }
-
 /* https://www.w3schools.com/csS/css3_buttons.asp */
 button {
   /* font-size: 14px; */
   border-radius: 8px;
-  padding: 6px 6px;
-  -webkit-transition-duration: 0.01s; /* Safari */
+  padding: 5px 6px;
+  -webkit-transition-duration: 0.01s;
+  /* Safari */
   transition-duration: 0.01s;
-  cursor:pointer;
+  cursor: pointer;
   background-color: white;
   color: black;
 }
-
-button:hover {
-    background-color: #4CAF50;
-    color: white;
+#lotto1 {
+  background-color: #4caf50;
 }
 
+#lotto1:hover,
+#lotto2:hover,
+#lotto3:hover {
+  color: black;
+}
+button:hover {
+  background-color: #4caf50;
+  color: white;
+}
 #resetThis {
   text-align: center;
+}
+
+.start {
+  display: block;
+}
+
+.play,
+.play1 {
+  display: none;
+}
+.tableGen {
+  border-collapse: collapse;
+  font-size: 14px;
+  border: 1px solid gray;
+}
+.tableTransparent {
+  border-collapse: collapse;
+
+  font-size: 14px;
+  border: 0px transparent gray;
+  text-align: left;
 }
