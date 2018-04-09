@@ -57,11 +57,25 @@ ul {
 }
 
 .circleTable {
-  /* column-width: inherit; */
-  /* border: 1px solid gray; */
+  margin-left: 0;
+}
+
+.circleRow {
+  padding: 0;
+  margin: 0;
+  text-align: left;
   font-size: 14px;
-  /* padding: 0px; */
-  /* height: 30px; */
+}
+
+.circleTableTD {
+  padding: 0;
+  margin: 0;
+  height: 30px;
+}
+
+.circleTableTDcol1 {
+  width: 105px;
+  /* font-weight: bold; */
 }
 
 body {
