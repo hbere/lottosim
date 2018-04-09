@@ -52,14 +52,20 @@
       </p>
       <p class="start">Click a button to play.</p>
       <p class="play">You bought <strong id="lastNgames"></strong> ticket(s).</p>
-      <p class="play">Winning numbers: <strong id="winningNumbers" class="circle"></strong>
-        <strong id="winningSpecial" class="circle circleSpecial specialBall"></strong></p>
-      <p class="play play1">Your numbers: <strong id="yourNumbers" class="circle"></strong>
-        <strong id="yourSpecial" class="circle circleSpecial specialBall"></strong></p>
-      <p class="play play1">Matched numbers: <strong id="yourNumbersMatches" class="circle"></strong>
-        <strong id="yourSpecialMatches" class="circle circleSpecial specialBall"></strong></p>
-      <p class="play play1">You matched <strong id="matchesN"></strong> number(s)
-        <strong id="matchesSpecial" class="specialBall"></strong>.</p>
+      <table class="play">
+        <tr class="play circleTable">
+          <td>Winning numbers:</td>
+          <td><strong id="winningNumbers"></strong><strong id="winningSpecial" class="specialBall"></strong></td>
+        </tr>
+        <tr class="play play1 circleTable">
+          <td>Your numbers:</td>
+          <td><strong id="yourNumbers"></strong><strong id="yourSpecial" class="specialBall"></strong></td>
+        </tr>
+        <tr class="play play1 circleTable">
+          <td>Match(es):</td>
+          <td><strong id="yourNumbersMatches"></strong><strong id="yourSpecialMatches" class="specialBall"></strong></td>
+        </tr>
+      </table>
       <h3 class="play"><strong id="lastNnetWon"></strong></h3>
     </div>
 		<div class="allPlays column1">
@@ -68,10 +74,10 @@
     </div>
 		<div class="rules column2">
       <h2 id="overall">Overall Totals</h2>
-      <p class="play">You spent <strong id="amtSpent"></strong> to buy <em id="plays"></em> ticket(s).</p>
+      <p class="play">You spent <strong id="amtSpent"></strong> on <span id="plays"></span> ticket(s).</p>
       <p class="play">You won back <strong id="amtWon"></strong>.</p>
       <h3 class="play"><strong id="netWon"></strong></h3>
-      <p class="playButtons"><button id="startOver" name="startOver" type="submit">Start Over</button></p>
+      <p class="play playButtons"><button id="startOver" name="startOver" type="submit">Start Over</button></p>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   	<script src="./resources/js/v2.js"></script>

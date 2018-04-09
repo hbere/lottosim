@@ -10,20 +10,58 @@ img {
   display: inline-block;
 }
 
+ul {
+  display:inline;
+  margin-left: 0;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+}
+
 .circle {
-  /* width: 500px;
-  height: 500px; */
+  display:inline-block;
+  margin: 0 1px 0 0;
+  background-color:#fff;
+  border: 1px solid #666666;
+  border-radius: 16px;
+  width: 25px;
+  height: 25px;
+  padding: 4px 0 0 0;
+  text-align: center;
+
+  /* color: #000; */
+  /* text-align: center; */
+  /* background: #fff; */
+
+  /* width: 500px; */
+  /* height: 500px; */
   /* border-radius: 80%; */
   /* font-size: 50px; */
-  color: #000;
   /* line-height: 500px; */
-  text-align: center;
-  background: #fff;
 }
 
 .circleSpecial {
+  display:inline-block;
+  margin: 0 1px 0 0;
   color: #fff;
-  background: red;
+  background-color: red;
+  border: 1px solid #666666;
+  border-radius: 16px;
+  width: 25px;
+  height: 25px;
+  padding: 4px 0 0 0;
+  text-align: center;
+
+  /* color: #fff; */
+  /* background: red; */
+}
+
+.circleTable {
+  /* column-width: inherit; */
+  /* border: 1px solid gray; */
+  font-size: 14px;
+  /* padding: 0px; */
+  /* height: 30px; */
 }
 
 body {
@@ -185,12 +223,12 @@ button:hover {
 
 .tableGen {
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 14px;
   border: 1px solid gray;
 }
 
 .tableTransparent {
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 14px;
   border: 0px transparent gray;
 }

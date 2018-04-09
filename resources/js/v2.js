@@ -113,6 +113,16 @@ function makeTable(headerArray, dataArray) { // return a table where:
   return newTable;
 }
 
+function arrayAsUnorderedList(x, classTag) {
+  var str = "<ul>";
+  x.forEach(function(element, j) {
+    str += "<li class='" + classTag + "'>" + x[j] + "</li>";
+  });
+  str += "</ul>";
+  return str;
+}
+
+
 
 // OBJECTS FOR LOTTERY & WALLET
 function lotto(
@@ -142,7 +152,7 @@ function lotto(
   this.plays = plays; // plays per ticket purchased
   // LAST DRAW HISTORY
   this.lastDraw = []; // last regular balls drawn
-  this.lastSpecial = null; // last special ball drawn
+  this.lastSpecial = []; // last special ball drawn   xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
   // MATCHES HISTORY
   this.prizesMatches = getZeroArray(balls+1);
   this.prizesSpecialMatches = getZeroArray(balls+1);
@@ -276,21 +286,15 @@ const wallet = {
   printTotals: function() { // print wallet totals to html page
     // PREVIOUS PLAY
     $("#lastNgames").text(numberWithCommas(this.lastNgames));
-    $("#yourNumbers").text(printArray(this.yourNumbers));
-    $("#yourSpecial").text(this.yourSpecial);
-    $("#winningNumbers").text(printArray(lottery.lastDraw));
-    $("#winningSpecial").text(lottery.lastSpecial);
-    $("#yourNumbersMatches").text(printArray(this.yourNumbersMatches));
-    $("#yourSpecialMatches").text(printArray(this.yourSpecialMatches));
-    $("#matchesN").text(this.yourNumbersMatches.length);
-    if (this.yourSpecialMatches.length === 1) {
-      $("#matchesSpecial").text(" and the special ball");
-    } else {
-      $("#matchesSpecial").text("");
-    }
+    $("#yourNumbers").html(arrayAsUnorderedList(this.yourNumbers, "circle"));
+    $("#yourSpecial").html(arrayAsUnorderedList(this.yourSpecial, "circleSpecial"));
+    $("#winningNumbers").html(arrayAsUnorderedList(lottery.lastDraw, "circle"));
+    $("#winningSpecial").html(arrayAsUnorderedList([lottery.lastSpecial], "circleSpecial"));
+    $("#yourNumbersMatches").html(arrayAsUnorderedList(this.yourNumbersMatches, "circle"));
+    $("#yourSpecialMatches").html(arrayAsUnorderedList(this.yourSpecialMatches, "circleSpecial"));
     if (this.lastNnetWon > 0) {
       $("#lastNnetWon").text(
-        "You won $" + numberWithCommas(Math.abs(this.lastNnetWon) + ".")
+        "You gained $" + numberWithCommas(Math.abs(this.lastNnetWon) + ".")
       );
       $("#lastNnetWon").css("color", "green");
     } else if (this.lastNnetWon == 0) {
@@ -307,7 +311,7 @@ const wallet = {
     $("#amtWon").text("$" + numberWithCommas(this.amtWon));
     $("#amtSpent").text("$" + numberWithCommas(this.amtSpent));
     if (this.netWon > 0) {
-      $("#netWon").text("You won $" + numberWithCommas(Math.abs(this.netWon) + "."));
+      $("#netWon").text("You gained $" + numberWithCommas(Math.abs(this.netWon) + "."));
       $("#netWon").css("color", "green");
     } else if (this.netWon === 0) {
       $("#netWon").text("You broke even.");
@@ -359,6 +363,9 @@ $("#lotto1").click(function() {
   $("#cost").val(lottery.cost);
   $("#ballsMax").val(lottery.ballsMax);
   $("#specialBallsMax").val(lottery.specialBallsMax);
+  $(".start").css("display", "block");
+  $(".play").css("display", "none");
+  $(".play1").css("display", "none");
 });
 
 $("#lotto2").click(function() {
@@ -373,6 +380,9 @@ $("#lotto2").click(function() {
   $("#cost").val(lottery.cost);
   $("#ballsMax").val(lottery.ballsMax);
   $("#specialBallsMax").val(lottery.specialBallsMax);
+  $(".start").css("display", "block");
+  $(".play").css("display", "none");
+  $(".play1").css("display", "none");
 });
 
 $("#lotto3").click(function() {
@@ -387,6 +397,9 @@ $("#lotto3").click(function() {
   $("#cost").val(lottery.cost);
   $("#ballsMax").val(lottery.ballsMax);
   $("#specialBallsMax").val(lottery.specialBallsMax);
+  $(".start").css("display", "block");
+  $(".play").css("display", "none");
+  $(".play1").css("display", "none");
 });
 
 $("#play1").click(function() {
