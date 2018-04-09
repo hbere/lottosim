@@ -1,4 +1,9 @@
-// © 2018 lottosim.website
+// LottoSim https://github.com/jcoffeepot/LottoSim
+// Copyright jcoffeepot
+// Released under the MIT license
+// https://github.com/jcoffeepot/LottoSim/blob/master/LICENSE
+// Date 2018-04-09
+
 // VARIABLE DECLARATIONS
 let lotto1PrizeArray = [0, 0, 0, 6, 60, 3000, 6000000];
 let lotto1PrizeSpecialArray = [0, 0, 0, 0, 0, 0, 0];
