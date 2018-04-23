@@ -74,11 +74,11 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
 }
 
-function getRandomArray(n, min, max) {
+function getRandomArray(num_elements, min, max) {
   // return 1 array of n random integers between min and max
   var randArray = [];
   var temp, match;
-  for (i = 0; i < n; i++) {
+  for (i = 0; i < num_elements; i++) {
     temp = getRandomInt(min, max); // generate new number
     match = 0;
     randArray.forEach(function(element, j) {
@@ -515,6 +515,14 @@ $("#play100").click(function() {
 
 $("#play1000").click(function() {
   wallet.buyTicket(1000);
+  wallet.printTotals();
+  $(".start").css("display", "none");
+  $(".play").css("display", "block");
+  $(".play1").css("display", "none");
+});
+
+$("#play100000").click(function() {
+  wallet.buyTicket(100000);
   wallet.printTotals();
   $(".start").css("display", "none");
   $(".play").css("display", "block");
