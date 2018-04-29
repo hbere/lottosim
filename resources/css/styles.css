@@ -159,7 +159,7 @@ h3 {
   background-color: #b5b5b5;
   height: 335px;
 }
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 680px) {
   /* For mobile phones: */
   body {
     width: 90%;
