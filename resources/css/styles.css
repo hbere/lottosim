@@ -112,7 +112,6 @@ h1 {
 h3 {
   margin-bottom: 18px;
 }
-
 .content {
   width: 100%;
   background-color: #e5e5e5;
@@ -128,7 +127,6 @@ h3 {
 .playButtons {
   text-align: center;
 }
-
 .column1 {
   background-color: #e5e5e5;
   width: 45%;
@@ -162,7 +160,7 @@ h3 {
 @media only screen and (max-width: 680px) {
   /* For mobile phones: */
   body {
-    width: 90%;
+    width: 100%;
   }
   .column1,
   .column2,
@@ -203,6 +201,9 @@ button {
   cursor: pointer;
   background-color: white;
   color: black;
+  /* Add to ensure clickability */
+  min-width: 48px;
+  min-height: 48px;
 }
 #lotto1 {
   background-color: #4caf50;
@@ -222,7 +223,6 @@ button:hover {
 .start {
   display: block;
 }
-
 .play,
 .play1 {
   display: none;
