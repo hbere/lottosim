@@ -95,7 +95,8 @@ body {
     to bottom right,
     #fcfffc,
     #eaffee
-  ); // #eaffee  #f4fcf6
+  ); 
+  /* #eaffee  #f4fcf6 */
   font-family: "Roboto", sans-serif;
 }
 h1,
@@ -239,7 +240,6 @@ button:hover {
   button {
     min-width: 48px;
     min-height: 48px;
-  }
   }
   input {
     min-width: 48px;
