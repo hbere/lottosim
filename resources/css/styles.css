@@ -235,6 +235,7 @@ button:hover {
     width: 100%;
     height: auto;
   }
+  /* TODO - update button layout for small screens for better presentation  */
   button {
     min-width: 48px;
     min-height: 48px;
