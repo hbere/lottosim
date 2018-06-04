@@ -225,7 +225,7 @@ button:hover {
   border: 0px transparent gray;
   text-align: left;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 659px) {
   /* For mobile phones: */
   body {
     width: 98%;
@@ -244,5 +244,8 @@ button:hover {
   input {
     min-width: 48px;
     min-height: 36px;
+  }
+  #play1000 {
+    display: none;
   }
 }
