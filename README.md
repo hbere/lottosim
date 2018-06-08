@@ -5,4 +5,4 @@ This is a simple lottery simulator web application built using JavaScript, jQuer
 Navigate to [lottosim.website](https://lottosim.website/) and give it a try.
 
 # License
-The content of this repository is licensed according to an [MIT License](https://github.com/jcoffeepot/LottoSim/blob/master/LICENSE).
+The content of this repository is licensed according to the [license listed here](https://github.com/hbere/lottosim/blob/master/LICENSE).

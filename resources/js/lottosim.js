@@ -1,8 +1,4 @@
-// LottoSim https://github.com/jcoffeepot/LottoSim
-// Copyright jcoffeepot
-// Released under the MIT license
-// https://github.com/jcoffeepot/LottoSim/blob/master/LICENSE
-// Date 2018-04-09
+// TODO: refactor for performance by: using document fragments and reducing writes to the DOM
 
 // VARIABLE DECLARATIONS
 let lotto1PrizeArray = [0, 0, 0, 6, 60, 3000, 6000000];
