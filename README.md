@@ -4,7 +4,7 @@ This is a simple lottery simulator web application built using JavaScript, jQuer
 # Quickstart
 Navigate to [lottosim.website](https://lottosim.website/) and give it a try.
 
-# Important Dependencies
+# Functional Dependencies
 * jQuery
 
 # License
